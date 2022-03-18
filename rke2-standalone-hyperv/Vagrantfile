@@ -34,6 +34,23 @@ kube-proxy-arg: "feature-gates=IPv6DualStack=false"
     exit 0
 SCRIPT
 
+# Vagrant.configure(2) do |config|
+#   # Need this to reboot Windows after enabling Containers feature.
+#   config.vagrant.plugins = ["vagrant-reload"]
+
+#   config.vm.network "private_network", bridge: "Default Switch"
+#   config.vm.define :main2 do |main2|
+#     main2.vm.host_name = "main2"
+#     main2.vm.box = "hashicorp/bionic64"
+#     main2.vm.provider :hyperv do |hv|
+#       hv.memory = 4096
+#       hv.cpus = 2
+#     end
+
+#     main2.vm.synced_folder "./sync", "/var/sync", smb_username: ENV['SMB_USERNAME'], smb_password: ENV['SMB_PASSWORD']
+#   end
+# end
+
 Vagrant.configure(2) do |config|
     # Need this to reboot Windows after enabling Containers feature.
     config.vagrant.plugins = ["vagrant-reload"]
